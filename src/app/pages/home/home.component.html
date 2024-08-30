@@ -1,1 +1,14 @@
-<p>home works!</p>
+<!-- <app-header></app-header> -->
+@if(username()!='name'){
+<div> {{username()}} </div>
+}
+
+<form [formGroup]="dataForm">
+    <label for="firstVal">Enter your name:</label>
+    <input type="text" id="name" formControlName="name">
+    <!-- <label for="firstVal">Enter a number:</label>
+    <input type="text" id="name" formControlName="firstVal">
+    <label for="secondVal">Enter a number:</label>
+    <input type="text" formControlName="secondVal">-->
+    <button type="submit" (click)="onSubmit($event)" [disabled]="dataForm.invalid">Submit</button>
+</form>
